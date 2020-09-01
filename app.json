@@ -1,0 +1,12 @@
+{
+  "name": "DrmDemo",
+  "displayName": "DrmDemo",
+  "expo": {
+    "name": "DrmDemo",
+    "slug": "DrmDemo",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
