@@ -4,32 +4,6 @@ import { StyleSheet, Text, View } from "react-native";
 import Video from "react-native-video";
 
 export default function App() {
-  useEffect(() => {
-    // console.log("spc", spcString);
-    // const base64spc = Base64.encode(spcString.spc);
-    const formData = new FormData();
-    return fetch(
-      `https://mvvuni.keydelivery.southeastasia.media.azure.net/FairPlay/?kid=fc52af14-88ca-4657-8c07-211f979a79df`,
-      {
-        method: "POST",
-        headers: {
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cm46bWljcm9zb2Z0OmF6dXJlOm1lZGlhc2VydmljZXM6Y29udGVudGtleWlkZW50aWZpZXIiOiJmYzUyYWYxNC04OGNhLTQ2NTctOGMwNy0yMTFmOTc5YTc5ZGYiLCJuYmYiOjE1OTkxMDEzMjgsImV4cCI6MTU5OTMxNzYyOCwiaXNzIjoiaHR0cHM6Ly9tdnZ1bmkuZWR1LnZuIiwiYXVkIjoiZWxucGx1cyJ9.-p9CSiYsuFV9S7inudgm3rKSlovnwbhIA6OMZkLgl7g",
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: formData,
-      }
-    )
-      .then((response) => {
-        response.blob().then(async (blob) => {
-          const text = await new Response(blob).text();
-          return text.replace("<ckc>", "").replace("</ckc>", "");
-        });
-      })
-      .catch((error) => {
-        console.error("Error", error);
-      });
-  }, []);
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
